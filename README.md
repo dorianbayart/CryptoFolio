@@ -1,4 +1,4 @@
-# pwa-template
-This is supposed to be a starter template for any Progressive Web Application.
+# CryptoFolio
+This is supposed to be a Progressive Web Application, allowing you to watch your different portfolios in just one place.
 
-Test it: https://dorianbayart.github.io/pwa-template/
+Test it on: https://dorianbayart.github.io/CryptoFolio/
