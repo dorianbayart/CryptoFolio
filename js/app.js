@@ -55,7 +55,7 @@ function generateContent(address, data) {
 
 function readJson(data) {
 	var text = "<div class='address'>Address: " + data.address + "</div>";
-	text += "<div class='balance'><span id='eth-balance'>Balance: " + data.ETH.balance + "</span><span id='usd-balance'>" + data.ETH.balance * data.ETH.price.rate + "</span></div>";
+	text += "<div class='balance'><span id='eth-balance'>ETH: " + data.ETH.balance + "</span> | <span id='usd-balance'>$" + data.ETH.balance * data.ETH.price.rate + "</span></div>";
 	/*$.each(data, function (key, val) {
 		if (typeof val == 'object') {
 			text += "<div class='" + key + "'>" + readJson(val) + "</div>";
