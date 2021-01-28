@@ -14,17 +14,8 @@ window.addEventListener('load', function () {
 		add();
 	});
 	
-	$.ajax({
-		url: "https://api.ethplorer.io/getAddressInfo/0x0255c9d3850caca1152aeb20425c264787661692?apiKey=freekey",
-		dataType: 'json',
-		success: function (data) {
-			console.log(data);
-			generateContent(data);
-		},
-		error: function (e) {
-			console.log(e);
-		}
-	});
+	getEthplorerInfo("0x0255c9d3850caca1152aeb20425c264787661692");
+	
 });
 
 window.addEventListener('online', handleStateChange);
@@ -42,8 +33,22 @@ function add() {
 	console.log('Add button clicked');
 }
 
-function generateContent(data) {
-	var text = $(readJson(data));
+function getEthplorerInfo(address) {
+	$.ajax({
+		url: "https://api.ethplorer.io/getAddressInfo/" + address + "?apiKey=freekey",
+		dataType: 'json',
+		success: function (data) {
+			console.log(data);
+			generateContent(address, data);
+		},
+		error: function (e) {
+			console.log(e);
+		}
+	});
+}
+
+function generateContent(address, data) {
+	var text = "<div id='"+address+"'>" + $(readJson(data)) + "</div>";
 	$('#content').html("").append(text);
 }
 
