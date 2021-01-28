@@ -59,9 +59,9 @@ function readJson(data) {
 	$.each(data.tokens, function (number, token) {
 		console.log(token);
 		text += "<div class='"+token.tokenInfo.symbol+"'>";
-		text += "<span id='"+token.tokenInfo.symbol+"-balance'>"+token.tokenInfo.name+": " + token.balance + "</span>";
+		text += "<span id='"+token.tokenInfo.symbol+"-balance'>"+token.tokenInfo.name+": " + Math.pow(token.balance, token.tokenInfo.decimals) + "</span>";
 		if(token.tokenInfo.price) {
-		   text += " | <span id='usd-balance'>$" + token.balance * token.tokenInfo.price.rate + "</span>";
+		   text += " | <span id='usd-balance'>$" + Math.pow(token.balance, token.tokenInfo.decimals) * token.tokenInfo.price.rate + "</span>";
 		}
 		text += "</div>";
 	});
