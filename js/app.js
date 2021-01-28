@@ -63,7 +63,7 @@ function readJson(data) {
 		   text += " | <span id='usd-balance'>$" + token.balance * token.tokenInfo.price.rate + "</span>";
 		}
 		text += "</div>";
-	}
+	});
 	/*$.each(data, function (key, val) {
 		if (typeof val == 'object') {
 			text += "<div class='" + key + "'>" + readJson(val) + "</div>";
