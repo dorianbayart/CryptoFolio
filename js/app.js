@@ -13,6 +13,18 @@ window.addEventListener('load', function () {
 	document.getElementById("addButton").addEventListener("click", function(){
 		add();
 	});
+	
+	$.ajax({
+		url: "https://api.ethplorer.io/getAddressInfo/0x0255c9d3850caca1152aeb20425c264787661692?apiKey=freekey",
+		dataType: 'json',
+		success: function (data) {
+			console.log(data);
+			generateContent(data);
+		},
+		error: function (e) {
+			console.log(e);
+		}
+	});
 });
 
 window.addEventListener('online', handleStateChange);
@@ -28,4 +40,22 @@ function handleStateChange() {
 
 function add() {
 	console.log('Add button clicked');
+}
+
+function generateContent(data) {
+	var text = $(readJson(data));
+	$('#content').html("").append(text);
+}
+
+
+function readJson(data) {
+	var text = "";
+	$.each(data, function (key, val) {
+		if (typeof val == 'object') {
+			text += "<div class='" + key + "'>" + readJson(val) + "</div>";
+		} else {
+			if (val !== null && val != "") text += "<span id='" + key + "'>" + val + "</span>";
+		}
+	});
+	return text;
 }
