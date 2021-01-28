@@ -57,7 +57,6 @@ function readJson(data) {
 	var text = "<div class='address'>Address: " + data.address + "</div>";
 	text += "<div class='balance'><span id='eth-balance'>ETH: " + data.ETH.balance + "</span> | <span id='usd-balance'>$" + data.ETH.balance * data.ETH.price.rate + "</span></div>";
 	$.each(data.tokens, function (number, token) {
-		console.log(token);
 		text += "<div class='"+token.tokenInfo.symbol+"'>";
 		text += "<span id='"+token.tokenInfo.symbol+"-balance'>"+token.tokenInfo.name+": " + token.balance * Math.pow(10, 0 - token.tokenInfo.decimals) + "</span>";
 		if(token.tokenInfo.price) {
@@ -65,12 +64,5 @@ function readJson(data) {
 		}
 		text += "</div>";
 	});
-	/*$.each(data, function (key, val) {
-		if (typeof val == 'object') {
-			text += "<div class='" + key + "'>" + readJson(val) + "</div>";
-		} else {
-			if (val !== null && val != "") text += "<span id='" + key + "'>" + val + "</span>";
-		}
-	});*/
 	return text;
 }
