@@ -48,7 +48,7 @@ function getEthplorerInfo(address) {
 }
 
 function generateContent(address, data) {
-	var text = "<div id='"+address+"'>" + $(readJson(data)) + "</div>";
+	var text = "<div id='"+address+"'>" + readJson(data) + "</div>";
 	$('#content').html("").append(text);
 }
 
