@@ -68,11 +68,11 @@ function readJson(data) {
 }
 
 function cryptoBalance(cryptoValue, cryptoDecimals) {
-	return token.balance * Math.pow(10, 0 - token.tokenInfo.decimals);
+	return cryptoValue * Math.pow(10, 0 - cryptoDecimals);
 }
 
 function fiatBalance(cryptoValue, cryptoDecimals, rate) {
-	return fiatRound(cryptoBalance(token.balance, token.tokenInfo.decimals) * rate);
+	return fiatRound(cryptoBalance(cryptoValue, cryptoDecimals) * rate);
 }
 
 function fiatRound(value) {
