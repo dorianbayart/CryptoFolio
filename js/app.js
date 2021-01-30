@@ -55,14 +55,27 @@ function generateContent(address, data) {
 
 function readJson(data) {
 	var text = "<div class='address'>Address: " + data.address + "</div>";
-	text += "<div class='balance'><span id='eth-balance'>ETH: " + data.ETH.balance + "</span> | <span id='usd-balance'>$" + data.ETH.balance * data.ETH.price.rate + "</span></div>";
+	text += "<div class='balance'><span id='eth-balance'>ETH: " + data.ETH.balance + "</span> | <span id='usd-balance'>$" + fiatRound(data.ETH.balance * data.ETH.price.rate) + "</span></div>";
 	$.each(data.tokens, function (number, token) {
 		text += "<div class='"+token.tokenInfo.symbol+"'>";
-		text += "<span id='"+token.tokenInfo.symbol+"-balance'>"+token.tokenInfo.name+": " + token.balance * Math.pow(10, 0 - token.tokenInfo.decimals) + "</span>";
+		text += "<span id='"+token.tokenInfo.symbol+"-balance'>"+token.tokenInfo.name+": " + cryptoBalance(token.balance, token.tokenInfo.decimals) + "</span>";
 		if(token.tokenInfo.price) {
-		   text += " | <span id='usd-balance'>$" + token.balance * Math.pow(10, 0 - token.tokenInfo.decimals) * token.tokenInfo.price.rate + "</span>";
+		   text += " | <span id='usd-balance'>$" + fiatBalance(token.balance, token.tokenInfo.decimals, token.tokenInfo.price.rate) + "</span>";
 		}
 		text += "</div>";
 	});
 	return text;
+}
+
+function cryptoBalance(cryptoValue, cryptoDecimals) {
+	return token.balance * Math.pow(10, 0 - token.tokenInfo.decimals);
+}
+
+function fiatBalance(cryptoValue, cryptoDecimals, rate) {
+	return fiatRound(cryptoBalance(token.balance, token.tokenInfo.decimals) * rate);
+}
+
+function fiatRound(value) {
+	console.log(value, Math.round(value * 100) / 100);
+	return Math.round(value * 100) / 100;
 }
