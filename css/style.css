@@ -125,7 +125,11 @@ footer > * > i.material-icons {
 }
 
 
-.adress {
+#content, .token-group {
+	border-top: 0.5px lightgray solid;
+	border-bottom: 0.5px lightgray solid;
+}
+.address {
 	font-size: 0.6rem;
 }
 .token {
@@ -137,4 +141,7 @@ footer > * > i.material-icons {
 }
 .token > #symbol, .token > #usd-balance {
 	margin: 0 0.25rem;
+	font-size: 0.8rem;
+	display: flex;
+	align-items: flex-end;
 }
