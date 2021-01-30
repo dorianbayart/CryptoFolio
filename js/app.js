@@ -56,10 +56,12 @@ function generateContent(address, data) {
 
 function readJson(data) {
 	var text = "<div class='address'>Address: " + data.address + "</div>";
-	text += "<div class='balance'><span id='eth-balance'>ETH: " + cryptoRound(data.ETH.balance) + " ETH</span> | <span id='usd-balance'>$" + fiatRound(data.ETH.balance * data.ETH.price.rate) + "</span></div>";
+	text += "<div class='eth-balance'><span id='balance'>ETH: " + cryptoRound(data.ETH.balance) + " ETH</span> | <span id='usd-balance'>$" + fiatRound(data.ETH.balance * data.ETH.price.rate) + "</span></div>";
 	$.each(data.tokens, function (number, token) {
 		text += "<div class='"+token.tokenInfo.symbol+"'>";
-		text += "<span id='"+token.tokenInfo.symbol+"-balance'>"+token.tokenInfo.name+": " + cryptoBalance(token.balance, token.tokenInfo.decimals) + "</span> <span id='"+token.tokenInfo.symbol+"-symbol'>" + token.tokenInfo.symbol + "</span>";
+		text += "<span id='name'>"+token.tokenInfo.name+"</span>: ";
+		text += "<span id='balance'>"+ cryptoBalance(token.balance, token.tokenInfo.decimals) + "</span>";
+		text += " <span id='symbol'>" + token.tokenInfo.symbol + "</span>";
 		if(token.tokenInfo.price) {
 		   text += " | <span id='usd-balance'>$" + fiatBalance(token.balance, token.tokenInfo.decimals, token.tokenInfo.price.rate) + "</span>";
 		}
