@@ -106,3 +106,15 @@ footer > * > i.material-icons {
 .color-red {
 	color: #AF4448;
 }
+
+
+.token {
+	display: flex;
+}
+.token > #balance {
+	flex-grow: 1;
+	text-align: end;
+}
+.token > #symbol, .token > #usd-balance {
+	margin: 0 1rem;
+}
