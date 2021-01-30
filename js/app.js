@@ -55,7 +55,7 @@ function generateContent(address, data) {
 
 function readJson(data) {
 	var text = "<div class='address'>Address: " + data.address + "</div>";
-	text += "<div class='balance'><span id='eth-balance'>ETH: " + data.ETH.balance + "</span> | <span id='usd-balance'>$" + fiatRound(data.ETH.balance * data.ETH.price.rate) + "</span></div>";
+	text += "<div class='balance'><span id='eth-balance'>ETH: " + cryptoRound(data.ETH.balance) + "</span> | <span id='usd-balance'>$" + fiatRound(data.ETH.balance * data.ETH.price.rate) + "</span></div>";
 	$.each(data.tokens, function (number, token) {
 		text += "<div class='"+token.tokenInfo.symbol+"'>";
 		text += "<span id='"+token.tokenInfo.symbol+"-balance'>"+token.tokenInfo.name+": " + cryptoBalance(token.balance, token.tokenInfo.decimals) + "</span>";
@@ -68,11 +68,15 @@ function readJson(data) {
 }
 
 function cryptoBalance(cryptoValue, cryptoDecimals) {
-	return cryptoValue * Math.pow(10, 0 - cryptoDecimals);
+	return cryptoRound(cryptoValue * Math.pow(10, 0 - cryptoDecimals));
 }
 
 function fiatBalance(cryptoValue, cryptoDecimals, rate) {
-	return fiatRound(cryptoBalance(cryptoValue, cryptoDecimals) * rate);
+	return fiatRound(cryptoValue * Math.pow(10, 0 - cryptoDecimals) * rate);
+}
+
+function cryptoRound(value) {
+	return Math.round(value * 10000) / 10000;
 }
 
 function fiatRound(value) {
