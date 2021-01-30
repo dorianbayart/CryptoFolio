@@ -56,7 +56,7 @@ function generateContent(address, data) {
 
 function readJson(data) {
 	var text = "<div class='address'>" + data.address + "</div>";
-	text += "<div class='token ETH'><span class='name'>ETH</span>: <span class='balance'>" + cryptoRound(data.ETH.balance) + "</span> <span class='symbol'>ETH</span> | <span class='usd-balance'>$" + fiatRound(data.ETH.balance * data.ETH.price.rate) + "</span></div>";
+	text += "<div class='token ETH'><span class='name'>ETH</span><span class='balance'>" + cryptoRound(data.ETH.balance) + "</span> <span class='symbol'>ETH</span><span class='usd-balance'>$" + fiatRound(data.ETH.balance * data.ETH.price.rate) + "</span></div>";
 	$.each(data.tokens, function (number, token) {
 		text += "<div class='token "+token.tokenInfo.symbol+"'>";
 		text += "<span class='name'>"+token.tokenInfo.name+"</span>";
