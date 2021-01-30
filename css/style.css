@@ -126,8 +126,11 @@ footer > * > i.material-icons {
 
 
 #content, .token-group {
-	border-top: 0.5px lightgray solid;
-	border-bottom: 0.5px lightgray solid;
+	/*border-top: 0.5px lightgray solid;
+	border-bottom: 0.5px lightgray solid;*/
+}
+.token-group {
+	margin: 12px 6px;
 }
 .address {
 	font-size: 0.6rem;
