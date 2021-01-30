@@ -63,7 +63,7 @@ function readJson(data) {
 		text += "<span id='balance'>"+ cryptoBalance(token.balance, token.tokenInfo.decimals) + "</span>";
 		text += "<span id='symbol'>" + token.tokenInfo.symbol + "</span>";
 		if(token.tokenInfo.price) {
-		   text += " | <span id='usd-balance'>$" + fiatBalance(token.balance, token.tokenInfo.decimals, token.tokenInfo.price.rate) + "</span>";
+		   text += "<span id='usd-balance'>$" + fiatBalance(token.balance, token.tokenInfo.decimals, token.tokenInfo.price.rate) + "</span>";
 		}
 		text += "</div>";
 	});
