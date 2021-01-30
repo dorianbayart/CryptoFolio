@@ -135,11 +135,12 @@ footer > * > i.material-icons {
 .token {
 	display: flex;
 }
-.token > #balance {
+.token > .name {
 	flex-grow: 1;
-	text-align: end;
 }
-.token > #symbol, .token > #usd-balance {
+.token > .balance {
+}
+.token > .symbol, .token > .usd-balance {
 	margin: 0 0.25rem;
 	font-size: 0.8rem;
 	display: flex;
