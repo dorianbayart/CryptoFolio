@@ -40,8 +40,8 @@ body {
 #shell-header a#logo {
 	display: flex;
 	align-self: center;
-	width: 48px;
-	height: 48px;
+	width: 32px;
+	height: 32px;
 }
 
 #shell-header a#logo img {
@@ -50,8 +50,8 @@ body {
 
 #shell-header span {
 	display: flex;
+	flex-grow: 1;
 	align-items: center;
-	margin-left: 8px;
 }
 
 /* Main */
