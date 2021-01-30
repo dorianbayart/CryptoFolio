@@ -139,10 +139,13 @@ footer > * > i.material-icons {
 	flex-grow: 1;
 }
 .token > .balance {
+	display: flex;
+	align-items: flex-end;
 }
 .token > .symbol, .token > .usd-balance {
 	margin: 0 0.25rem;
 	font-size: 0.8rem;
 	display: flex;
 	align-items: flex-end;
+	padding-bottom: 1px;
 }
