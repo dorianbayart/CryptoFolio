@@ -59,9 +59,9 @@ function readJson(data) {
 	text += "<div class='token ETH'><span id='name'>ETH</span>: <span id='balance'>" + cryptoRound(data.ETH.balance) + "</span> <span id='symbol'>ETH</span> | <span id='usd-balance'>$" + fiatRound(data.ETH.balance * data.ETH.price.rate) + "</span></div>";
 	$.each(data.tokens, function (number, token) {
 		text += "<div class='token "+token.tokenInfo.symbol+"'>";
-		text += "<span id='name'>"+token.tokenInfo.name+"</span>: ";
+		text += "<span id='name'>"+token.tokenInfo.name+"</span>";
 		text += "<span id='balance'>"+ cryptoBalance(token.balance, token.tokenInfo.decimals) + "</span>";
-		text += " <span id='symbol'>" + token.tokenInfo.symbol + "</span>";
+		text += "<span id='symbol'>" + token.tokenInfo.symbol + "</span>";
 		if(token.tokenInfo.price) {
 		   text += " | <span id='usd-balance'>$" + fiatBalance(token.balance, token.tokenInfo.decimals, token.tokenInfo.price.rate) + "</span>";
 		}
