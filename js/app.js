@@ -76,10 +76,9 @@ function fiatBalance(cryptoValue, cryptoDecimals, rate) {
 }
 
 function cryptoRound(value) {
-	return Math.round(value * 10000) / 10000;
+	return Math.round(value * 100000) / 100000;
 }
 
 function fiatRound(value) {
-	console.log(value, Math.round(value * 100) / 100);
 	return Math.round(value * 100) / 100;
 }
