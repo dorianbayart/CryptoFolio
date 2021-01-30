@@ -15,6 +15,7 @@ window.addEventListener('load', function () {
 	});
 	
 	getEthplorerInfo("0x0255c9d3850caca1152aeb20425c264787661692");
+	getEthplorerInfo("0x5ac9e070d28f7d8f36dab4773dfffac2fa6548f0");
 	
 });
 
