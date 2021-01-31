@@ -4,22 +4,22 @@ body {
 	margin: 0;
 	background-color: #9F92B6;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	color: #020202
 }
 @media screen and (max-width: 1280px) {
 	body {
-		font-size: 1.4rem;
+		font-size: 1.2rem;
 	}
 }
 @media screen and (max-width: 860px) {
 	body {
-		font-size: 1.2rem;
+		font-size: 1.0rem;
 	}
 }
 @media screen and (max-width: 640px) {
 	body {
-		font-size: 1.0rem;
+		font-size: 0.8rem;
 	}
 }
 
@@ -130,10 +130,12 @@ footer > * > i.material-icons {
 	border-bottom: 0.5px lightgray solid;*/
 }
 .token-group {
-	margin: 12px 6px;
+	margin: 12px 0;
+	padding: 0 6px;
+	background-color: whitesmoke;
 }
 .address {
-	font-size: 0.6rem;
+	font-size: 0.75em;
 }
 .token {
 	display: flex;
@@ -147,7 +149,7 @@ footer > * > i.material-icons {
 }
 .token > .symbol, .token > .usd-balance {
 	margin: 0 0.25rem;
-	font-size: 0.8rem;
+	font-size: 0.8em;
 	display: flex;
 	align-items: flex-end;
 	padding-bottom: 1px;
