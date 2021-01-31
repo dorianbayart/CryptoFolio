@@ -2,7 +2,7 @@ body {
 	display: flex;
 	flex-flow: column;
 	margin: 0;
-	background-color: #9F92B6;
+	background-color: #9F92B64F;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1.4rem;
 	color: #020202;
