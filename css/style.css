@@ -106,7 +106,7 @@ button > i {
 /* Footer */
 footer {
 	display: flex;
-	font-size: 0.6em;
+	font-size: 0.75em;
 	background-color: #EEE;
 	border-top: 2px solid #EEE;
 }
