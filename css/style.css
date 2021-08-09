@@ -131,33 +131,27 @@ footer > * > i.material-icons {
 }
 
 
-#content, .token-group {
-	/*border-top: 0.5px lightgray solid;
-	border-bottom: 0.5px lightgray solid;*/
-}
 .token-group {
 	margin: 12px 0;
 	padding: 0 3px;
 	background-color: whitesmoke;
 }
 .address {
-	font-size: 0.75em;
+	font-size: 0.85em;
 }
 .token {
 	display: flex;
+	align-items: baseline;
 	padding: 3px 6px;
 }
 .token > .name {
 	flex-grow: 1;
 }
 .token > .balance {
-	display: flex;
 	align-items: flex-end;
 }
 .token > .symbol, .token > .usd-balance {
 	margin: 0 0.25rem;
 	font-size: 0.8em;
-	line-height: 1.7em;
-	display: flex;
 	align-items: flex-end;
 }
